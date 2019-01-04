@@ -19,7 +19,8 @@
 if [ $GOPATH ];then
 	echo "GOPATH = $GOPATH"
 else
-	exit
+    echo GOPATH NOT EXIST
+	exit 1
 fi
 
 rm -rf $GOPATH/src/golang.org/x
