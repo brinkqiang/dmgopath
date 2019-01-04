@@ -17,9 +17,9 @@ rmdir /S /Q %GOPATH%\src\golang.org\x
 
 mkdir %GOPATH%\src\golang.org\x
 
-git clone --recursive https://github.com/golang/tools.git 
+git clone --recursive https://github.com/golang/tools.git %GOPATH%\src\golang.org\x\tools
 
-git clone --recursive https://github.com/golang/lint.git
+git clone --recursive https://github.com/golang/lint.git %GOPATH%\src\golang.org\x\lint
 
 rem # # # # # # # # # # # # # # # # # # # # 
 rem # private
