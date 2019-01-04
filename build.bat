@@ -18,6 +18,7 @@ cd /d tools
 git submodule update --init --recursive
 popd
 
+pushd %GOPATH%\src\golang.org\x
 git clone https://github.com/golang/lint.git
 cd /d lint
 git submodule update --init --recursive
