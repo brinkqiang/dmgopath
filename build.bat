@@ -4,11 +4,24 @@ rem git clone https://github.com/brinkqiang/dmgopath.git
 rem pushd dmgopath
 rem git submodule update --init --recursive
 
-rmdir /S /Q build
-mkdir build
-pushd build
-cmake -A x64 -DCMAKE_BUILD_TYPE=relwithdebinfo ..
-cmake --build .
+if not defined GOPATH (
+    echo GOPATH NOT EXIST
+    goto FAILED
+)
+
+rmdir /S /Q %GOPATH%\src\golang.org\x
+mkdir %GOPATH%\src\golang.org\x
+
+pushd %GOPATH%\src\golang.org\x
+git clone https://github.com/golang/tools.git
+cd tools
+git submodule update --init --recursive
 popd
 
-rem pause
+git clone https://github.com/golang/lint.git
+cd lint
+git submodule update --init --recursive
+popd
+
+:FAILED
+pause

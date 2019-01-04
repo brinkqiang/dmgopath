@@ -16,11 +16,26 @@
 # sh configure
 # popd
 
-rm -rf build
-mkdir build
-pushd build
-cmake -DCMAKE_BUILD_TYPE=relwithdebinfo ..
-cmake --build .
+if [ $GOPATH ];then
+	echo "GOPATH = $GOPATH"
+else
+	exit
+fi
+
+rm -rf $GOPATH/src/golang.org/x
+
+mkdir -p $GOPATH/src/golang.org/x/
+
+pushd $GOPATH/src/golang.org/x/
+git clone https://github.com/golang/tools.git
+cd tools
+git submodule update --init --recursive
+popd
+
+pushd $GOPATH/src/golang.org/x/
+git clone https://github.com/golang/lint.git
+cd lint
+git submodule update --init --recursive
 popd
 
 # popd
