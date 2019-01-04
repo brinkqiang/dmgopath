@@ -14,12 +14,12 @@ mkdir %GOPATH%\src\golang.org\x
 
 pushd %GOPATH%\src\golang.org\x
 git clone https://github.com/golang/tools.git
-cd tools
+cd /d tools
 git submodule update --init --recursive
 popd
 
 git clone https://github.com/golang/lint.git
-cd lint
+cd /d lint
 git submodule update --init --recursive
 popd
 
