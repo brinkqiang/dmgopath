@@ -23,21 +23,24 @@ else
 	exit 1
 fi
 
+# # # # # # # # # # # # # # # # # # # # 
+# public
+# # # # # # # # # # # # # # # # # # # # 
 rm -rf $GOPATH/src/golang.org/x
-
 mkdir -p $GOPATH/src/golang.org/x/
 
-pushd $GOPATH/src/golang.org/x/
-git clone https://github.com/golang/tools.git
-cd tools
-git submodule update --init --recursive
-popd
+git clone --recursive https://github.com/golang/tools.git $GOPATH/src/golang.org/x/tools
 
-pushd $GOPATH/src/golang.org/x/
-git clone https://github.com/golang/lint.git
-cd lint
-git submodule update --init --recursive
-popd
+git clone --recursive https://github.com/golang/lint.git $GOPATH/src/golang.org/x/lint
+
+# # # # # # # # # # # # # # # # # # # # 
+# private
+# # # # # # # # # # # # # # # # # # # # 
+
+rm -rf $GOPATH/src/github.com/brinkqiang
+mkdir -p $GOPATH/src/github.com/brinkqiang
+
+git clone --recursive https://github.com/brinkqiang/profile.git $GOPATH/src/github.com/brinkqiang/profile
 
 # popd
 

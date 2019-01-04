@@ -9,20 +9,26 @@ if not defined GOPATH (
     goto FAILED
 )
 
+rem # # # # # # # # # # # # # # # # # # # # 
+rem # public
+rem # # # # # # # # # # # # # # # # # # # # 
+
 rmdir /S /Q %GOPATH%\src\golang.org\x
+
 mkdir %GOPATH%\src\golang.org\x
 
-pushd %GOPATH%\src\golang.org\x
-git clone https://github.com/golang/tools.git
-cd /d tools
-git submodule update --init --recursive
-popd
+git clone --recursive https://github.com/golang/tools.git 
 
-pushd %GOPATH%\src\golang.org\x
-git clone https://github.com/golang/lint.git
-cd /d lint
-git submodule update --init --recursive
-popd
+git clone --recursive https://github.com/golang/lint.git
+
+rem # # # # # # # # # # # # # # # # # # # # 
+rem # private
+rem # # # # # # # # # # # # # # # # # # # # 
+
+rmdir /S /Q %GOPATH%\src\github.com\brinkqiang
+mkdir %GOPATH%\src\github.com\brinkqiang
+
+git clone --recursive https://github.com/brinkqiang/profile.git %GOPATH%\src\github.com\brinkqiang
 
 :FAILED
 pause
