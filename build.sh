@@ -42,6 +42,4 @@ mkdir -p $GOPATH/src/github.com/brinkqiang
 
 git clone --recursive https://github.com/brinkqiang/profile.git $GOPATH/src/github.com/brinkqiang/profile
 
-# popd
-
 # echo continue && read -n 1
