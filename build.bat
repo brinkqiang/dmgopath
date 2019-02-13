@@ -30,7 +30,7 @@ rem # # # # # # # # # # # # # # # # # # # #
 rmdir /S /Q %GOPATH%\src\github.com\brinkqiang
 mkdir %GOPATH%\src\github.com\brinkqiang
 
-git clone --recursive https://github.com/brinkqiang/goc.git %GOPATH%\src\github.com\brinkqiang
+git clone --recursive https://github.com/brinkqiang/goc.git %GOPATH%\src\github.com\brinkqiang\goc
 
 :FAILED
 pause
