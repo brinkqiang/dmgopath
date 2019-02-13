@@ -40,6 +40,6 @@ git clone --recursive https://github.com/golang/lint.git $GOPATH/src/golang.org/
 rm -rf $GOPATH/src/github.com/brinkqiang
 mkdir -p $GOPATH/src/github.com/brinkqiang
 
-git clone --recursive https://github.com/brinkqiang/profile.git $GOPATH/src/github.com/brinkqiang/profile
+git clone --recursive https://github.com/brinkqiang/goc.git $GOPATH/src/github.com/brinkqiang/profile
 
 # echo continue && read -n 1
